@@ -5,6 +5,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:weatherapp/models/Apimodel.dart';
 import 'package:weatherapp/models/Model.dart';
 
+import 'NewsDetailScreen.dart';
+
 class NewsScreen extends StatefulWidget {
   const NewsScreen({super.key});
 
@@ -79,7 +81,14 @@ class _NewsScreenState extends State<NewsScreen> {
                           elevation: 5,
                           child: InkWell(
                             onTap: () {
-                              // Optionally, you can add navigation to detail page
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => NewsDetailScreen(
+                                    article: article,
+                                  ),
+                                ),
+                              );
                             },
                             child: SingleChildScrollView(
                               child: Column(
